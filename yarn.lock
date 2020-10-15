@@ -5191,6 +5191,11 @@ https-browserify@^1.0.0:
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
 
+hyperscript-helpers@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/hyperscript-helpers/-/hyperscript-helpers-3.0.3.tgz#583ac45214c9ea810991feb97bdb37fc3d12a1e8"
+  integrity sha1-WDrEUhTJ6oEJkf65e9s3/D0Soeg=
+
 iconv-lite@0.4.24, iconv-lite@^0.4.24:
   version "0.4.24"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
@@ -8615,6 +8620,11 @@ react-error-overlay@^6.0.7:
   version "6.0.7"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.7.tgz#1dcfb459ab671d53f660a991513cb2f0a0553108"
   integrity sha512-TAv1KJFh3RhqxNvhzxj6LeT5NWklP6rDr2a0jaTfsZ5wSZWHOGeqQyejUp3xxLfPt2UpyJEcVQB/zyPcmonNFA==
+
+react-hyperscript@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-hyperscript/-/react-hyperscript-3.2.0.tgz#24144ff6b1beb07af7154794a782a74b34920868"
+  integrity sha512-kf9VmxwCNqAImT3uDrCPJ8H5XdNzfSLps9x0qgJCH6OUCBiGAy1m9wHpedfr7GSuFqowhkNwv4ZuC40k3E/zRQ==
 
 react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.13.1"
