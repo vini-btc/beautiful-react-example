@@ -8,7 +8,6 @@ import './App.css'
 Square = ({ onClick, value }) -> 
   button '.square', { onClick }, value
 
-
 class Board extends React.Component
   renderSquare: (i) => 
     squareProps =
@@ -17,11 +16,10 @@ class Board extends React.Component
     render Square, squareProps
   
   render: =>
-    div '#board', [
-      (div '.board-row .1', [@renderSquare(0), @renderSquare(1), @renderSquare(2)]),
-      (div '.board-row .2', [@renderSquare(3), @renderSquare(4), @renderSquare(5)]),
-      (div '.board-row .3', [@renderSquare(6), @renderSquare(7), @renderSquare(8)])
-    ]
+    row1 = div '.board-row .1', [@renderSquare(0), @renderSquare(1), @renderSquare(2)]
+    row2 = div '.board-row .2', [@renderSquare(3), @renderSquare(4), @renderSquare(5)]
+    row3 = div '.board-row .3', [@renderSquare(6), @renderSquare(7), @renderSquare(8)]
+    div '#board', [ row1, row2, row3 ]
   
 class Game extends React.Component 
   constructor: (props) ->
@@ -65,16 +63,20 @@ class Game extends React.Component
 
     moves = history.map (step, move) =>
       desc = if move then 'Go to move #' + move else 'Go to game start'
-      li { key: move }, (button { onClick: () => @jumpTo move }, desc)
+      historyMoveButton = button { onClick: () => @jumpTo move }, desc
+      li { key: move }, historyMoveButton
 
     status = if winner then 'Winner: ' + winner else 'Next player: ' + if @state.xIsNext then 'X' else 'O'
-
-    return div '.game', [
-      (div '.game-board', [ render Board, { squares: current.squares, onClick: (i) => @handleClick i } ]),
-      (div '.game-info', [
-        (div '#status',status),
-        (ol '#moves', moves)
-      ])
+    gameStatus = div '#status', status
+    gameMoves = ol '#moves', moves
+    gameBoard = div '.game-board', [ render Board, { squares: current.squares, onClick: (i) => @handleClick i } ]
+    gameInfo = div '.game-info', [
+      gameStatus,
+      gameMoves
+    ]
+    div '.game', [
+      gameBoard,
+      gameInfo
     ]
   
 
@@ -94,7 +96,7 @@ calculateWinner = (squares) ->
   while i < lines.length
     [a, b, c] = lines[i]
     if squares[a] and squares[a] == squares[b] and squares[a] == squares[c]
-      return squares[a]
+      squares[a]
     i++
   null
 
